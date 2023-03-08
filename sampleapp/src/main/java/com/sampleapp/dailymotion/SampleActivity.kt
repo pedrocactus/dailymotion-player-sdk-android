@@ -3,6 +3,7 @@ package com.sampleapp.dailymotion
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.ApplicationInfo
 import android.net.http.SslError
@@ -34,7 +35,7 @@ class SampleActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
 
         const val DEFAULT_VERTICAL_VIDEO_ID = "x7h2j4q"
-        const val DEFAULT_HORIZONTAL_VIDEO_ID = "x70val9"
+        const val DEFAULT_HORIZONTAL_VIDEO_ID = "x2lefik"
         const val DEFAULT_PLAYLIST_ID = "x5zhzj"
         const val DEFAULT_SCALE_MODE = "fit"
         const val DEFAULT_QUALITY = "240"
@@ -71,6 +72,9 @@ class SampleActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         when (v) {
 
+            goToNewScreen -> startActivity(Intent(
+                this,
+                SampleActivity::class.java))
             toggleControlsButton -> playerWebView.toggleControls()
             showControlsButton -> playerWebView.showControls(true)
             hideControlsButton -> playerWebView.showControls(false)
@@ -182,6 +186,7 @@ class SampleActivity : AppCompatActivity(), View.OnClickListener {
             actionBar?.title = "${getString(R.string.app_name)} v${BuildConfig.PLAYER_SDK_VERSION}"
         }
 
+        goToNewScreen.setOnClickListener(this@SampleActivity)
         toggleControlsButton.setOnClickListener(this@SampleActivity)
         showControlsButton.setOnClickListener(this@SampleActivity)
         hideControlsButton.setOnClickListener(this@SampleActivity)

@@ -360,6 +360,14 @@
                     app:layout_constraintTop_toBottomOf="@id/logFullScreenButton" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <Button
+                android:id="@+id/goToNewScreen"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pop new screen" />
         </LinearLayout>
     </ScrollView>
 
